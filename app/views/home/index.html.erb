@@ -8,10 +8,12 @@ Search existing Contacts
   </p>
 <% end %>
 
+<% if params[:search] %>
   <% @results.each do |result| %>
 
       <li><%= link_to result.name, new_message_path(number: result.number, name: result.name), remote: true%></li>
   <% end %>
+<% end %>
 
 <%= link_to 'New Message', new_message_path, class: 'btn btn-info new_message', remote: true %>
 

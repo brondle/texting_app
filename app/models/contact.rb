@@ -1,5 +1,6 @@
 class Contact<ActiveRecord::Base
   has_many :messages
+  belongs_to :user
 
     def self.search(search)
     if search
@@ -8,5 +9,5 @@ class Contact<ActiveRecord::Base
       where(nil)
     end
   end
-  
+
 end
