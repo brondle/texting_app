@@ -1,0 +1,11 @@
+<%= simple_form_for @message do |m| %>
+  <% if params[:name] %>
+    <%= m.hidden_field :to, :value => params[:number] %>
+    <%= m.label "Message To #{params[:name]}" %>
+  <% else %>
+    <%= m.input :to %>
+  <% end %>
+  <%= m.hidden_field :from, :value => "+15005550006" %>
+  <%= m.input :body %>
+  <%= m.button :submit %>
+<% end %>

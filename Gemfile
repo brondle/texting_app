@@ -17,6 +17,7 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_form'
 gem 'rest-client'
+gem 'twilio-ruby'
 
 group :development do
   gem 'byebug'

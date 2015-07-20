@@ -1,1 +1,18 @@
 Shit yeah!!! Texting!
+<br>
+Search existing Contacts
+<%= form_tag root_path, :method => 'get', :id => "contacts_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+  <% @results.each do |result| %>
+
+      <li><%= link_to result.name, new_message_path(number: result.number, name: result.name), remote: true%></li>
+  <% end %>
+
+<%= link_to 'New Message', new_message_path, class: 'btn btn-info new_message', remote: true %>
+
+<%= link_to 'New Contact', new_contact_path, class: 'btn btn-primary new_contact', remote: true %>
